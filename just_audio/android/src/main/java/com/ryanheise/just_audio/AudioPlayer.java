@@ -731,7 +731,7 @@ public class AudioPlayer implements MethodCallHandler, Player.Listener, Metadata
                 builder.setLivePlaybackSpeedControl(livePlaybackSpeedControl);
             }
             if (offloadSchedulingEnabled) {
-                builder.setRenderersFactory(new DefaultRenderersFactory(context).setEnableAudioOffload(true));
+                builder.setRenderersFactory(new DefaultRenderersFactory(context).setEnableAudioOffload(true).extensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_ON));
             }
             player = builder.build();
             player.experimentalSetOffloadSchedulingEnabled(offloadSchedulingEnabled);
